@@ -1,38 +1,100 @@
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+  background-color: white;
+  color: #383e66;
+;
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  background-color: #383e66;
+   min-height: 10vh;
   display: flex;
   flex-direction: column;
+  align-items: center; 
+  justify-content: center;
+  font-size: calc(10px + 2vmin); 
+  color: #2afc85
+
+}
+
+.App-uploader {
+  min-height: 8vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+
+}
+
+
+
+.upload-btn {
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  text-transform: uppercase;
+  color: #383e66;
+  background: #2afc85;
+  border: 1px solid transparent;
+  width: 20vh;
+  height: 5vh;
+  border-radius: 10px;
 }
 
-.App-link {
-  color: #61dafb;
+
+input[type="file"] {
+  display: none;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* Gallery */
+
+
+.App-gallery {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.App-image-container {
+  height: 40vh;
+  flex-grow: 1;
+}
+
+/* .App-image-container:last-child {
+  flex-grow: 10;
+} */
+
+.App-image {
+  max-height: 100%;
+  min-width: 100%;
+  object-fit: cover;
+  vertical-align: bottom;
+}
+
+
+@media (max-aspect-ratio: 1/1) {
+  .App-image-container {
+    height: 30vh;
   }
-  to {
-    transform: rotate(360deg);
+}
+
+
+@media (max-height: 480px) {
+  .App-image-container {
+    height: 80vh;
+  }
+}
+
+
+@media (max-aspect-ratio: 1/1) and (max-width: 480px) {
+  .App-gallery {
+    flex-direction: row;
+  }
+
+  .App-image-container {
+    height: auto;
+    width: 100%;
+  }
+  .App-image {
+    width: 100%;
+    max-height: 75vh;
+    min-width: 0;
   }
 }
